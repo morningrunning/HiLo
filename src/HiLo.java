@@ -16,11 +16,17 @@ public class HiLo {
 			
 			int guess = 0;
 			
+			// keep track of number of tries
+			int numberOfTries = 0;
+			
 			while ( guess != theNumber ) {
 				System.out.println("Guess a number between 1 and 100: ");
 				
 				// get the user's guess
 				guess = scan.nextInt();
+				
+				// add one to the number of tries
+				numberOfTries++;
 				
 				if (guess < theNumber) {
 					System.out.println(guess + " is too low, try again!");
@@ -30,6 +36,9 @@ public class HiLo {
 					System.out.println(guess + " is correct...you win!");
 				}
 			}
+			
+			System.out.println("It only took you: " + numberOfTries
+					+  " tries! Good Work!");
 			
 			// ask user to play again
 			System.out.println("Would you like to play again (y/n)? ");
